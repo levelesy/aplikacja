@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="colors.css">
+    <title>sklep</title>
+</head>
+<body>
+    <header>
+
+    <h2>Wybierz jedną opcję:</h2>
+
+    <form id="formularzOpcji">
+        <label>
+            <input type="radio" name="opcja" id="opcja1"> Opcja 1
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="opcja" id="opcja2"> Opcja 2
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="opcja" id="opcja3"> Opcja 3 (Zamknij stronę)
+        </label>
+
+        <button type="button" onclick="wykonajAkcje()">Wykonaj</button>
+    </form>
+
+    <script>
+    function wykonajAkcje() {
+        var opcje = ['opcja1', 'opcja2', 'opcja3'];
+
+        for (var i = 0; i < opcje.length; i++) {
+            var radio = document.getElementById(opcje[i]);
+
+            if (radio.checked) {
+                switch (opcje[i]) {
+                    case 'opcja1':
+                        // Przekierowanie do lista.html
+                        window.location.href = 'lista.html';
+                        break;
+                    case 'opcja2':
+                        // Przekierowanie do zakupy.html
+                        window.location.href = 'zakupy.html';
+                        break;
+                    case 'opcja3':
+                        // Zamknięcie strony
+                        window.close();
+                        break;
+                }
+                // Przerwij pętlę po wykonaniu akcji
+                break;
+            }
+        }
+    }
+</script>
+    </header>
+    <footer>
+    </footer>
+</body>
+</html>
