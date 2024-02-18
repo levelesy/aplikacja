@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikacja Sklep</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <h2>Aplikacja Sklep</h2>
+
+    <form id="formularzZakupow">
+        <label>
+            Kod kreskowy:
+            <input type="text" name="kodKreskowy" onkeydown="handleEnter(event)">
+        </label><br>
+
+        <button type="button" onclick="dodajProdukt()">Dodaj produkt</button>
+        <br>
+        <button type="button" onclick="wyswietlParagon()">Zakończ zakupy (klawisz P)</button>
+    </form>
+
+    <div id="wynik"></div>
+    <div id="paragon"></div>
+
+</body>
+</html>
