@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Produktów</title>
+</head>
+<body>
+
+    <h2>Lista Produktów</h2>
+    <a href="index.html"><button type="button">Powrót</button></a>
+
+    <table id="produktyTable">
+        <thead>
+            <tr>
+                <th>Kod kreskowy</th>
+                <th>Nazwa produktu</th>
+                <th>Cena netto</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Tu będzie generowana zawartość tabeli przez JavaScript -->
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+    <script>
+        // Funkcja do generowania wierszy tabeli na podstawie danych z listy produktów
+        function generujTabeleProduktow() {
+            var tabelaProduktow = document.getElementById('produktyTable').getElementsByTagName('tbody')[0];
+            listaProduktow.forEach(function(produkt) {
+                var nowyWiersz = tabelaProduktow.insertRow();
+                var komorkaKod = nowyWiersz.insertCell(0);
+                var komorkaNazwa = nowyWiersz.insertCell(1);
+                var komorkaCena = nowyWiersz.insertCell(2);
+                komorkaKod.textContent = produkt.kodKreskowy;
+                komorkaNazwa.textContent = produkt.nazwaProduktu;
+                komorkaCena.textContent = produkt.cenaNetto.toFixed(2) + ' PLN';
+            });
+        }
+
+        // Wywołanie funkcji generującej tabelę przy załadowaniu strony
+        window.onload = generujTabeleProduktow;
+    </script>
+
+</body>
+</html>
